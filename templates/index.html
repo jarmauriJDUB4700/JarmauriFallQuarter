@@ -3,36 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Jamauri</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-5.3.8-dist/css/bootstrap.min.css') }}">
     
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Business Name</a>
-            <div class="collapse navbar-collapse">
+    <nav class="navbar navbar-expand-lg mv-navbar">
+        <div class="container-fluid position-relative d-flex align-items-center">
+            <!-- left-aligned links -->
+            <ul class="navbar-nav nav-left me-auto d-flex flex-row align-items-center">
+              <li class="nav-item pe-3">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item pe-3">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item pe-3">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+            </ul>
 
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Team</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Sign Up</a>
-                    </li>
-                </ul>
+            <!-- centered title -->
+            <div class="mv-title">WELCOME TO THE MULTIVERSE</div>
+
+            <!-- right area -->
+            <div class="nav-right d-flex ms-auto">
+              <a class="btn btn-sm btn-outline-light" href="#">Login</a>
             </div>
         </div>
     </nav>
 
+    <!-- Hero Card Section -->
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-4">
+          <div class="card mv-card">
+            <img src="static/images/51350.jpg" class="card-img-top" alt="Jamauri">
+            <div class="card-body text-center">
+              <h5 class="card-title">Jamauri</h5>
+              <p class="card-text">Multiverse CEO</p>
+              <a href="#" class="btn btn-primary">View Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="{{ url_for('static', filename='bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+    <!-- Inline CSS for the multiverse background & navbar styles -->
+    <style>
+      /* reset html/body defaults */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* multiverse background with !important to override Bootstrap */
+      body {
+        background: linear-gradient(135deg, #0b1020 0%, #2b2b6b 100%) !important;
+      }
+
+      /* multiverse navbar styles */
+      .mv-navbar {
+        height: 86px;
+        position: relative;
+        background: linear-gradient(90deg, rgba(206, 24, 24, 0.95) 0%, rgba(11,16,32,0.98) 50%, rgba(36, 99, 236, 0.95) 100%);
+        box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+      }
+      .mv-navbar .nav-left { z-index: 2; }
+      .mv-navbar .nav-right { z-index: 2; }
+      .mv-navbar .mv-title{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        z-index: 2;
+        font-weight: 800;
+        letter-spacing: 2px;
+        color: #fff;
+        text-shadow: 0 2px 14px rgba(0,0,0,0.7);
+        white-space: nowrap;
+      }
+      .mv-navbar .nav-link, .mv-navbar .btn {
+        color: rgba(255,255,255,0.92);
+      }
+      .mv-navbar .nav-link:hover { color: #ffd6f0; }
+    </style>
 </body>
 </html>
